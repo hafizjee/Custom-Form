@@ -1,0 +1,110 @@
+<?php
+/**
+ * {{controller}} {{action}} template
+ *
+ * @var $block \Hafiz\Ecommerce\Block\Index\Index
+ */
+?>
+<!-- update content from Ecommerce\view\frontend\templates\index\form.phtml -->
+<div class="row signup_splashscreen">
+    <div class="col-md-8 splash_content desktop">
+        <?php
+            echo $block->getLayout()
+           ->createBlock('Magento\Cms\Block\Block')
+           ->setBlockId('comming-fall-splash-section')
+           ->toHtml();
+        ?>
+    </div>
+    <div class="col-md-8 splash_content mobile-view" style="display: none;">
+        <?php
+            echo $block->getLayout()
+           ->createBlock('Magento\Cms\Block\Block')
+           ->setBlockId('splash-content-mobile')
+           ->toHtml();
+        ?>
+    </div>
+    <div class="col-md-4 signup_form">
+    	<form class="form ecommerce"
+		action="<?php /* @escapeNotVerified */ echo $block->getFormAction(); ?>"
+		id="hafiz-form"
+		method="post"
+		data-hasrequired="<?php /* @escapeNotVerified */ echo __('* Required Fields') ?>"
+		data-mage-init='{"validation":{}}'>
+		 	<fieldset class="fieldset">
+		 		<div class="content-section">
+			 		<div class="heading">
+			 			<h2>Let’s work together</h2>
+			 		</div>
+			 		<div class="paragraph">
+			 			<p>If you're winery in the Pacific Northwest Region, let's work together. Please fill out your information below to be contacted.</p>
+			 		</div>
+				</div>
+			 	<div class="field fname required" >
+			 		<label class="label" for="fname">
+			 			<span><?php /* @escapeNotVerified */ echo __('First Name') ?></span>
+					</label>
+				 	<div class="control">
+					 	<input name="fname" id="fname" title="<?php /* @escapeNotVerified */ echo
+						__('First Name') ?>" value="" class="input-text"
+						type="text" data-validate="{required:true}"/>
+				 	</div>
+			 	</div>
+        <div class="field lname">
+          <label class="label" for="lname">
+            <span><?php /* @escapeNotVerified */ echo __('Last Name') ?></span>
+          </label>
+          <div class="control">
+            <input name="lname" id="lname" title="<?php /* @escapeNotVerified */ echo
+            __('Last Name') ?>" value="" class="input-text"
+            type="text"/>
+          </div>
+        </div>
+        <div class="field phone">
+          <label class="label" for="phone">
+            <span><?php /* @escapeNotVerified */ echo __('Phone') ?></span>
+          </label>
+          <div class="control">
+            <input name="phone" id="phone" title="<?php /* @escapeNotVerified */ echo
+            __('Phone') ?>" value="" class="input-text" type="text" />
+          </div>
+        </div>
+				<div class="field email required">
+			 		<label class="label" for="email">
+			 			<span><?php /* @escapeNotVerified */ echo __('Email') ?></span>
+			 		</label>
+			 		<div class="control">
+						<input name="email" id="email" title="<?php /* @escapeNotVerified */ echo
+						__('Email') ?>" value="<?php echo $block->escapeHtml($this->helper('Hafiz\Ecommerce\Helper\Data')->getUserEmail()) ?>" class="input-text"
+						type="email" data-validate="{required:true, 'validate-email':true}"/>
+			 		</div>
+			 	</div>
+			 	<div class="field winery">
+				 	<label class="label" for="winery">
+				 		<span><?php /* @escapeNotVerified */ echo __('Winery') ?></span>
+					</label>
+				 	<div class="control">
+					 	<input name="winery" id="winery" title="<?php /* @escapeNotVerified */ echo
+						__('Winery') ?>" value="" class="input-text" type="text" />
+				 	</div>
+			 	</div>
+        <div class="field zip">
+          <label class="label" for="zip">
+            <span><?php /* @escapeNotVerified */ echo __('Zip Code') ?></span>
+          </label>
+          <div class="control">
+            <input name="zip" id="zip" title="<?php /* @escapeNotVerified */ echo
+            __('Zip Code') ?>" value="" class="input-text" type="text" />
+          </div>
+        </div>
+		 	</fieldset>
+		 	<div class="actions-toolbar">
+		 		<div class="primary">
+		 			<input type="hidden" name="hideit" id="hideit" value="" />
+		 			<button type="submit" title="<?php /* @escapeNotVerified */ echo __('Submit') ?>" class="action submit primary">
+		 				<span><?php /* @escapeNotVerified */ echo __('Submit') ?></span>
+		 			</button>
+		 		</div>
+		 	</div>
+		</form>
+    </div>
+</div>
